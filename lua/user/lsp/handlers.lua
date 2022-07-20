@@ -64,6 +64,7 @@ local function lsp_keymaps(bufnr)
   keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
   keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 
+  keymap(bufnr, "n", "<leader>==", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
   keymap(bufnr, "n", "<leader>lf", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
   keymap(bufnr, "n", "<leader>li", "<cmd>LspInfo<cr>", opts)
   keymap(bufnr, "n", "<leader>lI", "<cmd>LspInstallInfo<cr>", opts)
@@ -84,6 +85,10 @@ M.on_attach = function(client, bufnr)
 
   if client.name == "sumneko_lua" then
     client.resolved_capabilities.document_formatting = false
+  end
+
+  if client.name == "yamlls" then
+    client.resolved_capabilities.document_formatting = true
   end
 
   lsp_keymaps(bufnr)

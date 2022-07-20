@@ -52,3 +52,8 @@ vim.cmd "command QA qa"
 --vim.cmd "au FileType go nmap <leader>rt <Plug>(go-run-tab)"
 --vim.cmd "au FileType go nmap <leader>rr <Plug>(go-run-split)"
 --vim.cmd "au FileType go nmap <leader>rv <Plug>(go-run-vertical)"
+
+-- remember last edit place
+vim.cmd [[
+  au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+]]
