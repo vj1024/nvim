@@ -44,3 +44,6 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
     vim.highlight.on_yank { higroup = "Visual", timeout = 200 }
   end,
 })
+
+-- Auto-format *.go,*.mod (go) files prior to saving them
+vim.cmd "autocmd BufWritePre *.go,*.mod lua vim.lsp.buf.formatting_sync(nil, 1000)"
