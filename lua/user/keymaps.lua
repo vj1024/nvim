@@ -80,3 +80,13 @@ keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
 keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
 keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
 keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
+
+-- Go
+keymap("n", "<leader>gr", ":TermExec cmd='go run .'<CR>", opts)
+keymap("n", "<leader>gt", ":TermExec cmd='go test -v -count=1 .'<CR>", opts)
+
+-- Open terminal in in current dir.
+keymap("n", "<leader>tt", ':lua require("toggleterm.terminal").Terminal:new({ cmd = string.format("cd $(dirname %s); $SHELL", vim.fn.expand("%"), 1), hidden = true }):toggle()<cr>', opts)
+
+-- htop
+keymap("n", "<leader>tp", "<cmd>lua _HTOP_TOGGLE()<CR>", opts)

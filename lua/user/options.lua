@@ -17,7 +17,7 @@ vim.opt.splitright = true                       -- force all vertical splits to 
 vim.opt.swapfile = false                        -- creates a swapfile
 vim.opt.termguicolors = true                    -- set term gui colors (most terminals support this)
 vim.opt.timeoutlen = 1000                       -- time to wait for a mapped sequence to complete (in milliseconds)
-vim.opt.undofile = true                         -- enable persistent undo
+vim.opt.undofile = false                         -- enable persistent undo
 vim.opt.updatetime = 300                        -- faster completion (4000ms default)
 vim.opt.writebackup = false                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 vim.opt.expandtab = true                        -- convert tabs to spaces
@@ -39,21 +39,3 @@ vim.opt.shortmess:append("c")
 vim.opt.whichwrap:append("<,>,[,]")           -- Allow specified keys that move the cursor left/right to move to the previous/next line when the cursor is on the first/last character in the line.
 vim.opt.iskeyword:append("-")
 vim.opt.relativenumber = false
-
-vim.cmd "command Q q"
-vim.cmd "command W w"
-vim.cmd "command WQ wq"
-vim.cmd "command Wq wq"
-vim.cmd "command QA qa"
-
--- for vim-go
---vim.g.go_metalinter_autosave = 1
---vim.g.go_metalinter_command = "golangci-lint" --vim.g.go_metalinter_command = "staticcheck"
---vim.cmd "au FileType go nmap <leader>rt <Plug>(go-run-tab)"
---vim.cmd "au FileType go nmap <leader>rr <Plug>(go-run-split)"
---vim.cmd "au FileType go nmap <leader>rv <Plug>(go-run-vertical)"
-
--- remember last edit place
-vim.cmd [[
-  au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
-]]

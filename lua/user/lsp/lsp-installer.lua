@@ -24,19 +24,6 @@ if not lspconfig_status_ok then
   return
 end
 
-local configs = require ("lspconfig/configs")
-if not configs.golangcilsp then
- 	configs.golangcilsp = {
-		default_config = {
-			cmd = {'golangci-lint-langserver'},
-			root_dir = lspconfig.util.root_pattern('.git', 'go.mod'),
-			init_options = {
-					command = { "golangci-lint", "run", "--enable-all", "--disable", "lll", "--out-format", "json" };
-			}
-		};
-	}
-end
-
 local opts = {}
 
 for _, server in pairs(servers) do
@@ -60,6 +47,7 @@ for _, server in pairs(servers) do
     opts = vim.tbl_deep_extend("force", gopls_opts, opts)
   end
 
+  -- Notice: you'd better update golangci-lint binary in ~/.local/share/nvim/lsp_servers/golangci_lint_ls/
   if server == "golangci_lint_ls" then
     local ls_opts = require "user.lsp.settings.golangci_lint_ls"
     opts = vim.tbl_deep_extend("force", ls_opts, opts)
