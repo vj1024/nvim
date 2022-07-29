@@ -11,12 +11,19 @@ M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
 
 M.setup = function()
   local signs = {
-
-    { name = "DiagnosticSignError", text = "" },
-    { name = "DiagnosticSignWarn", text = "" },
-    { name = "DiagnosticSignHint", text = "" },
-    { name = "DiagnosticSignInfo", text = "" },
+    { name = "DiagnosticSignError", text = "x" },
+    { name = "DiagnosticSignWarn", text = "!" },
+    { name = "DiagnosticSignHint", text = "*" },
+    { name = "DiagnosticSignInfo", text = "*" },
   }
+  if os.getenv('NERD_FONTS') == '1' then
+    signs = {
+      { name = "DiagnosticSignError", text = "" },
+      { name = "DiagnosticSignWarn", text = "" },
+      { name = "DiagnosticSignHint", text = "" },
+      { name = "DiagnosticSignInfo", text = "" },
+    }
+  end
 
   for _, sign in ipairs(signs) do
     vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })

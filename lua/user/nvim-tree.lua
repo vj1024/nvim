@@ -10,6 +10,73 @@ end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
+local render_icons = {
+  glyphs = {
+    default = " ",
+    symlink = "➸",
+    folder = {
+      arrow_open = "▶",
+      arrow_closed = " ",
+      default = "■",
+      open = "■",
+      empty = "□",
+      empty_open = "□",
+      symlink = "➸",
+      symlink_open = "➸",
+    },
+    git = {
+      unstaged = "",
+      staged = "",
+      unmerged = "",
+      renamed = "",
+      untracked = "",
+      deleted = "",
+      ignored = "",
+    },
+  },
+}
+
+local diagnostics_icons = {
+  hint = "*",
+  info = "*",
+  warning = "!",
+  error = "x",
+}
+
+if os.getenv('NERD_FONTS') == '1' then
+  render_icons = {
+    glyphs = {
+      default = "",
+      symlink = "",
+      folder = {
+        arrow_open = "",
+        arrow_closed = "",
+        default = "",
+        open = "",
+        empty = "",
+        empty_open = "",
+        symlink = "",
+        symlink_open = "",
+      },
+      git = {
+        unstaged = "",
+        staged = "S",
+        unmerged = "",
+        renamed = "➜",
+        untracked = "U",
+        deleted = "",
+        ignored = "◌",
+      },
+    },
+  }
+  diagnostics_icons = {
+    hint = "",
+    info = "",
+    warning = "",
+    error = "",
+  }
+end
+
 nvim_tree.setup {
   update_focused_file = {
     enable = true,
@@ -17,41 +84,12 @@ nvim_tree.setup {
   },
   renderer = {
     root_folder_modifier = ":t",
-    icons = {
-      glyphs = {
-        default = " ",
-        symlink = "➸",
-        folder = {
-          arrow_open = "▶",
-          arrow_closed = " ",
-          default = "■",
-          open = "■",
-          empty = "□",
-          empty_open = "□",
-          symlink = "➸",
-          symlink_open = "➸",
-        },
-        git = {
-          unstaged = "",
-          staged = "",
-          unmerged = "",
-          renamed = "",
-          untracked = "",
-          deleted = "",
-          ignored = "",
-        },
-      },
-    },
+    icons = render_icons,
   },
   diagnostics = {
     enable = true,
     show_on_dirs = true,
-    icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
-    },
+    icons = diagnostics_icons,
   },
   view = {
     width = 30,
