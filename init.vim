@@ -18,4 +18,6 @@ omap s :normal vs<CR>
 
 " vim.g.vim_markdown_folding_disabled = 1
 
-set statusline=
+"set statusline=
+set statusline=%F\ [%{&fenc}\ %{&ff}\ %p%%]
+set laststatus=2
