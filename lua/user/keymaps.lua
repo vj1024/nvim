@@ -92,4 +92,4 @@ keymap("n", "<leader>tt", ':lua require("toggleterm.terminal").Terminal:new({ cm
 keymap("n", "<leader>tp", "<cmd>lua _HTOP_TOGGLE()<CR>", opts)
 
 -- toggles indent lines on and off.
-keymap("n", "<leader>i", ":IndentBlanklineToggle<CR>", opts)
+keymap("n", "<leader>\\", ":IndentBlanklineToggle<CR>", opts)
