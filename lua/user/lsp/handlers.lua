@@ -71,8 +71,8 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 	keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 
-	keymap(bufnr, "n", "<leader>==", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
-	keymap(bufnr, "n", "<leader>fm", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
+	keymap(bufnr, "n", "<leader>==", "<cmd>lua vim.lsp.buf.format { async = true }<cr>", opts)
+	keymap(bufnr, "n", "<leader>fm", "<cmd>lua vim.lsp.buf.format { async = true }<cr>", opts)
 	keymap(bufnr, "n", "<leader>li", "<cmd>LspInfo<cr>", opts)
 	keymap(bufnr, "n", "<leader>lI", "<cmd>LspInstallInfo<cr>", opts)
 	--keymap(bufnr, "n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
@@ -95,7 +95,7 @@ M.on_attach = function(client, bufnr)
 	end
 
 	if client.name == "yamlls" then
-		client.resolved_capabilities.document_formatting = true
+		client.server_capabilities.documentFormattingProvider = true
 	end
 
 	lsp_keymaps(bufnr)

@@ -37,7 +37,7 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 })
 
 -- Auto-format *.go,*.mod (go) files prior to saving them
-vim.cmd "autocmd BufWritePre *.go,*.mod lua vim.lsp.buf.formatting_sync(nil, 1000)"
+vim.cmd "autocmd BufWritePre *.go,*.mod lua vim.lsp.buf.format { async = true }"
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 	pattern = { "*.java" },
 	callback = function()

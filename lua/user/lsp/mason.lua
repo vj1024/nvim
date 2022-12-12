@@ -7,6 +7,9 @@ local servers = {
 	"bashls",
 	"jsonls",
 	"yamlls",
+	"gopls",
+	"golangci_lint_ls", -- Notice: you'd better update golangci-lint binary in ~/.local/share/nvim/lsp_servers/golangci_lint_ls/
+	"marksman",
 }
 
 local settings = {
