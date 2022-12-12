@@ -25,10 +25,10 @@ vim.opt.shiftwidth = 4                          -- the number of spaces inserted
 vim.opt.tabstop = 4                             -- insert 2 spaces for a tab
 vim.opt.cursorline = true                       -- highlight the current line
 vim.opt.number = true                           -- set numbered lines
-vim.opt.laststatus = 3
-vim.opt.showcmd = false
-vim.opt.ruler = false
-vim.opt.numberwidth = 4                         -- set number column width to 2 {default 4}
+vim.opt.laststatus = 3                          -- only the last window will always have a status line
+vim.opt.showcmd = false                         -- hide (partial) command in the last line of the screen (for performance)
+vim.opt.ruler = false                           -- hide the line and column number of the cursor position
+vim.opt.numberwidth = 4                         -- minimal number of columns to use for the line number {default 4}
 vim.opt.signcolumn = "yes"                      -- always show the sign column, otherwise it would shift the text each time
 vim.opt.wrap = true                             -- display lines as one long line
 vim.opt.scrolloff = 8
@@ -39,3 +39,5 @@ vim.opt.shortmess:append("c")
 vim.opt.whichwrap:append("<,>,[,]")             -- Allow specified keys that move the cursor left/right to move to the previous/next line when the cursor is on the first/last character in the line.
 vim.opt.iskeyword:append("-")
 vim.opt.relativenumber = false
+vim.opt.formatoptions:remove({ "c", "r", "o" }) -- This is a sequence of letters which describes how automatic formatting is to be done
+vim.opt.linebreak = true
