@@ -125,4 +125,7 @@ cmp.setup({
 	experimental = {
 		ghost_text = true,
 	},
+    completion = {
+        keyword_length = 2,
+    },
 })
