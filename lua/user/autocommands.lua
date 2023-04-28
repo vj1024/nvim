@@ -32,6 +32,7 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 
 -- Auto-format *.go,*.mod (go) files prior to saving them
 vim.cmd "autocmd BufWritePre *.go,*.mod lua vim.lsp.buf.format { async = true }"
+
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   pattern = { "*.java" },
   callback = function()
@@ -51,5 +52,12 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
     if line_count >= 5000 then
       vim.cmd "IlluminatePauseBuf"
     end
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "json", "yaml", "lua" },
+  callback = function()
+    vim.opt_local.shiftwidth = 2 -- indent spaces
   end,
 })
