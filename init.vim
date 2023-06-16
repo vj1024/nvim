@@ -14,3 +14,5 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 
 "statusline is set by lualine
 "set laststatus=2
+
+set noautochdir

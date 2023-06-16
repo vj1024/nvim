@@ -1,16 +1,17 @@
 require "user.impatient"
 require "user.options"
 require "user.colorscheme"
+require "user.keymaps"
+require "user.lualine"
 
--- do not load plugins when open sql file.
-local ext = vim.fn.expand("%"):match(".+%.(%w+)$")
-for _, v in pairs({ "sql", "log" }) do
-  if v == ext then
-    return
-  end
+-- disable all plugins for large files.
+local filename = vim.fn.expand("%")
+local filesize = vim.fn.getfsize(filename)
+if filesize > 10*1024*1024 then
+  vim.opt.loadplugins = false
+  return
 end
 
-require "user.keymaps"
 require "user.plugins"
 require "user.autocommands"
 require "user.cmp"
@@ -21,7 +22,6 @@ require "user.autopairs"
 require "user.comment"
 require "user.nvim-tree"
 require "user.bufferline"
-require "user.lualine"
 require "user.toggleterm"
 require "user.project"
 require "user.illuminate"
