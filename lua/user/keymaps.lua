@@ -95,6 +95,8 @@ keymap("n", "<leader>tp", "<cmd>lua _HTOP_TOGGLE()<CR>", opts)
 
 -- toggles indent lines on and off.
 keymap("n", "<leader>\\", ":IndentBlanklineToggle<CR>", opts)
+keymap("n", "<leader>2", ":set shiftwidth=2<CR>", opts)
+keymap("n", "<leader>4", ":set shiftwidth=4<CR>", opts)
 
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
