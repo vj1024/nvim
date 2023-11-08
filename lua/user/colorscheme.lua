@@ -1,8 +1,9 @@
 local colorscheme = "tokyonight"
 
 require("tokyonight").setup({
+  style = "day",
   -- style = "night",
-  style = "moon",
+  -- style = "moon",
   -- disable italic for functions
   styles = {
     comments = { italic = false },
