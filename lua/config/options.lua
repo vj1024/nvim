@@ -45,3 +45,10 @@ vim.opt.iskeyword:append("-")
 vim.opt.relativenumber = false
 vim.opt.formatoptions:remove({ "c", "r", "o" }) -- This is a sequence of letters which describes how automatic formatting is to be done
 vim.opt.linebreak = true
+
+-- vim.api.nvim_create_autocmd({ "FileType" }, {
+--   pattern = { "yaml", "lua" },
+--   callback = function()
+--     vim.opt_local.shiftwidth = 2 -- indent spaces
+--   end,
+-- })

@@ -69,6 +69,22 @@ map("n", "<leader>tt", function()
 end, { desc = "Terminal (cwd)" })
 
 -- toggles indent lines on and off.
-map("n", "<leader>\\", ":IndentBlanklineToggle<CR>:Gitsigns toggle_signs<CR>", opts)
 map("n", "<leader>2", ":set shiftwidth=2<CR>", opts)
 map("n", "<leader>4", ":set shiftwidth=4<CR>", opts)
+
+map("n", "<leader>==", "<cmd>lua vim.lsp.buf.format { async = true }<cr>", opts)
+map("n", "<leader>fm", "<cmd>lua vim.lsp.buf.format { async = true }<cr>", opts)
+map("n", "<leader>li", "<cmd>LspInfo<cr>", opts)
+map("n", "<leader>lI", "<cmd>Mason<cr>", opts)
+map("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
+map("n", "<leader>lj", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", opts)
+map("n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
+map("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
+map("n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+
+map("n", "<leader>dd", "<cmd>Telescope diagnostics<CR>", opts)
+map("n", "<leader>dj", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", opts)
+map("n", "<leader>dk", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
+map("n", "<leader>dl", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+
+map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)

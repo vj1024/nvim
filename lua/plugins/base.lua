@@ -16,4 +16,22 @@ return {
     "numToStr/Comment.nvim",
     opts = {},
   },
+
+  {
+    "nvim-lualine/lualine.nvim",
+    event = "VeryLazy",
+    opts = function(_, opts)
+      opts.options.component_separators = { left = "|", right = "|" }
+      opts.options.section_separators = { left = "|", right = "|" }
+      table.insert(opts.sections.lualine_c, "encoding")
+      table.insert(opts.sections.lualine_c, "filesize")
+    end,
+  },
+
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function(_, opts)
+      opts.indent.enable = false
+    end,
+  },
 }
