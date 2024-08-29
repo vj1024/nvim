@@ -34,4 +34,11 @@ return {
       opts.indent.enable = false
     end,
   },
+
+  {
+    "folke/noice.nvim",
+    opts = function(_, opts)
+      opts.cmdline = { view = "cmdline" } -- default: cmdline_popup
+    end,
+  },
 }

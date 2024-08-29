@@ -88,3 +88,6 @@ map("n", "<leader>dk", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts
 map("n", "<leader>dl", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 
 map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
+
+-- 打开/关闭 行号、indent缩进标识
+map("n", "<leader>\\", "<cmd>set nu!<cr><cmd>IBLToggle<cr>", opts)
