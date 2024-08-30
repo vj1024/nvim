@@ -7,6 +7,7 @@ if filesize > 20 * 1024 * 1024 then
 else
   -- bootstrap lazy.nvim, LazyVim and your plugins
   require("config.lazy")
+  require("config.indent-blankline")
 end
 
 -- disable mouse
