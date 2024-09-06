@@ -45,7 +45,7 @@ vim.opt.iskeyword:append("-")
 vim.opt.relativenumber = false
 vim.opt.formatoptions:remove({ "c", "r", "o" }) -- This is a sequence of letters which describes how automatic formatting is to be done
 vim.opt.linebreak = true
-vim.opt.listchars = "trail:~" -- vim cmd: :set listchars=eol:$,space:-,tab:>#,trail:~ :set list
+vim.opt.listchars = "tab:╎ ,trail:~" -- vim cmd: :set listchars=eol:$,space:-,tab:>#,trail:~ :set list
 
 -- vim.api.nvim_create_autocmd({ "FileType" }, {
 --   pattern = { "yaml", "lua" },
