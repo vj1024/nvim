@@ -1,3 +1,7 @@
+-- disable some default keymaps
+vim.keymap.del("n", "<S-l>")
+vim.keymap.del("n", "<S-h>")
+
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
@@ -53,6 +57,7 @@ map("v", ">", ">gv", opts)
 -- Telescope
 map("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 map("n", "<leader>fx", ":Telescope live_grep<CR>", opts)
+map("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
 map("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
 -- Comment
