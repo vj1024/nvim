@@ -47,9 +47,10 @@ vim.opt.formatoptions:remove({ "c", "r", "o" }) -- This is a sequence of letters
 vim.opt.linebreak = true
 vim.opt.listchars = "tab:╎ ,trail:~" -- vim cmd: :set listchars=eol:$,space:-,tab:>#,trail:~ :set list
 
--- vim.api.nvim_create_autocmd({ "FileType" }, {
---   pattern = { "yaml", "lua" },
---   callback = function()
---     vim.opt_local.shiftwidth = 2 -- indent spaces
---   end,
--- })
+-- set json/yaml indent to 2 spaces.
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "json", "yaml" },
+  callback = function()
+    vim.opt_local.shiftwidth = 2 -- indent spaces
+  end,
+})
