@@ -54,11 +54,8 @@ map("v", ">", ">gv", opts)
 
 -- Plugins --
 
--- Telescope
-map("n", "<leader>ff", ":Telescope find_files<CR>", opts)
-map("n", "<leader>fx", ":Telescope live_grep<CR>", opts)
-map("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
-map("n", "<leader>fb", ":Telescope buffers<CR>", opts)
+map("n", "<leader>ff", LazyVim.pick("files"), opts) -- Find Files (Root Dir)
+map("n", "<leader>fg", LazyVim.pick("live_grep"), opts) -- Grep (Root Dir)
 
 -- Comment
 map("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
