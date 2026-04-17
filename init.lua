@@ -3,7 +3,7 @@ local filename = vim.fn.expand("%")
 local filesize = vim.fn.getfsize(filename)
 if filesize > 20 * 1024 * 1024 then
   vim.opt.loadplugins = false
-  vim.cmd([[colorscheme morning]])
+  vim.cmd([[colorscheme evening]])
 else
   -- bootstrap lazy.nvim, LazyVim and your plugins
   require("config.lazy")

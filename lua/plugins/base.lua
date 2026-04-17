@@ -4,8 +4,8 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      --style = "day",
-      style = "night",
+      style = "day",
+      -- style = "night",
       styles = {
         comments = { italic = false },
         keywords = { italic = false },
