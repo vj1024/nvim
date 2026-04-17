@@ -52,11 +52,6 @@ map("v", "p", '"_dP', opts)
 map("v", "<", "<gv", opts)
 map("v", ">", ">gv", opts)
 
--- Plugins --
-
-map("n", "<leader>ff", LazyVim.pick("files"), opts) -- Find Files (Root Dir)
-map("n", "<leader>fg", LazyVim.pick("live_grep"), opts) -- Grep (Root Dir)
-
 -- Comment
 map("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
 map("x", "<leader>/", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", opts)
