@@ -11,3 +11,5 @@ Upgrade from https://github.com/LazyVim/starter
 * `Lazy update plugin_name`: update this plugin.
 
 * `Lazy install`: install all plugins.
+
+* `Lazy sync`: update and auto clean, equals to `Lazy update && Lazy install && Lazy clean`.
